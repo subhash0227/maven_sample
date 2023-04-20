@@ -55,6 +55,12 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- Add the Sonar plugin -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>4.8.0.2856</version>
+            </plugin>
         </plugins>
     </build>
 </project>

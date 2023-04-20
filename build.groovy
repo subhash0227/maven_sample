@@ -22,7 +22,7 @@ stage('build') {
 stage('SonarQube') {
     steps {
         withSonarQubeEnv('SonarQube') {
-            sh "mvn clean verify sonar:sonar -Dsonar.projectKey=maven -Dsonar.projectName='maven_sample'"
+            sh "mvn clean sonar:sonar -Dsonar.projectKey=maven -Dsonar.projectName='maven_sample'"
         }
     }
 }
