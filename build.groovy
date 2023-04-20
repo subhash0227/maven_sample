@@ -22,14 +22,14 @@ stage('build') {
 stage('SonarQube') {
     steps {
         withSonarQubeEnv('SonarQube') {
-            sh "mvn clean sonar:sonar -Dsonar.projectKey=maven -Dsonar.projectName='maven_sample'"
+            sh "mvn sonar:sonar -Dsonar.projectKey=maven -Dsonar.projectName='maven_sample'"
         }
     }
 }
   }//end stages
 post {
       success {
-          archiveArtifacts artifacts: "target/*.jar"
+          echo "The build Passed."
       }
       failure {
           echo "The build failed."
