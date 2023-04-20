@@ -30,6 +30,7 @@ stage('SonarQube') {
 post {
       success {
           archiveArtifacts artifacts: "target/*.jar"
+          echo "The build passed."
       }
       failure {
           echo "The build failed."
