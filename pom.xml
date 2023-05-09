@@ -17,6 +17,12 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <!-- Tell Maven to treat all source files as UTF-8 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- SonarQube configuration -->
+        <sonar.host.url>http://localhost:9000</sonar.host.url>
+        <sonar.token>sqa_9463ca56200b5ebd62c62a552948dcd07c733390</sonar.token>
+        <sonar.projectKey>maven</sonar.projectKey>
+        <sonar.projectName>maven_sample</sonar.projectName>
     </properties>
 
     <dependencies>
