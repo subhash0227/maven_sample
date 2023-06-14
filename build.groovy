@@ -35,8 +35,7 @@ pipeline {
             '-o', './',
             '-s', './',
             '-f', 'ALL',
-            '--prettyPrint',
-            '-d', './'
+            '--prettyPrint'
           ].join(' ')
           def dependencyCheckInstallation = tool 'OWASP Dependency-Check'
           withEnv(["PATH+OWASPDependencyCheck=${dependencyCheckInstallation}/bin"]) {
