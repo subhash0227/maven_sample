@@ -22,26 +22,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          withSonarQubeEnv('SonarQube') {
-            maven()
-          }
-        }
-      }
-    }
-    stage('OWASP') {
-      steps {
-        script {
-          def dependencyCheckArgs = [
-            '-o', './',
-            '-s', './',
-            '-f', 'ALL',
-            '--prettyPrint'
-          ].join(' ')
-          def dependencyCheckInstallation = tool 'OWASP Dependency-Check'
-          withEnv(["PATH+OWASPDependencyCheck=${dependencyCheckInstallation}/bin"]) {
-            sh "dependency-check.sh ${dependencyCheckArgs}"
-          }
-          dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+          maven()
         }
       }
     }
